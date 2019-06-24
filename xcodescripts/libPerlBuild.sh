@@ -1,11 +1,11 @@
 #!/bin/bash
-PERLLIB="/System/Library/Perl"
+PERLLIB="$SDKROOT/System/Library/Perl"
 
 # enumerate over each directory in this directory, if they subsequently have a 
 # darwin-thread-multi-2level/CORE/libperl.dylib file then build a copy of the
 # perl libraries against them and copy them to the app bundle
 
-CC="llvm-gcc"
+CC="cc"
 
 # obtained by running perl -MExtUtils::Embed -e ldopts
 IRSSI_INCLUDES="-I$SRCROOT/irssi/src -I$SRCROOT/irssi/src/core -I$SRCROOT/irssi/src/fe-common/core"
@@ -31,6 +31,7 @@ BINARY_MODULES="common Irc UI"
 for lib in $PERLLIB/*; do
 	V=`basename $lib`
 	[[ $V == "5.8.1" ]] && continue
+	[[ $V == "Extras" ]] && continue
 
 	_CFLAGS="$CFLAGS -DMIPERL=\"$V\" -I$lib/darwin-thread-multi-2level/CORE"
 
