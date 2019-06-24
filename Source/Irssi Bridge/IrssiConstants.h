@@ -16,7 +16,7 @@
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#define MIStringConstant(x) NSString *x
+#define MIStringConstant(x) extern NSString *x
 
 /* Server */
 MIStringConstant(kMIServerConnectedEvent);

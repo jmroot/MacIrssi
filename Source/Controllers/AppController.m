@@ -57,7 +57,7 @@
 #define PASTE_WARNING_THRESHOLD 4
 
 void setRefToAppController(AppController *a);
-void textui_deinit();
+void textui_deinit(void);
 int argc;
 char **argv;
 

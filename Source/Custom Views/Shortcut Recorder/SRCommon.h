@@ -37,7 +37,7 @@ typedef struct _KeyCombo {
 #pragma mark Enums
 
 // Unicode values of some keyboard glyphs
-NS_ENUM(unichar, SRKeyCodeGlyph) {
+typedef NS_ENUM(unichar, SRKeyCodeGlyph) {
 	KeyboardTabRightGlyph       = 0x21E5,
 	KeyboardTabLeftGlyph        = 0x21E4,
 	KeyboardCommandGlyph        = kCommandUnicode,
